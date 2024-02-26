@@ -6,8 +6,8 @@ import NavBar from '../02-NavBar/NavBar';
 function Header(){
     return(
         <>
-        <h1>Hello</h1>
-        <NavBar />
+            
+            <NavBar />
         </>
     )
 }
