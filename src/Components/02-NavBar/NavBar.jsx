@@ -2,17 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './NavBar.module.css';
 
 function NavBar() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
-
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
+  
   return (
     <>
       <div className={styles.container1}>
