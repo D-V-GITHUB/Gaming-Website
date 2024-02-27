@@ -1,0 +1,65 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+.images img{
+    width: 400px;
+    height: auto;
+}
+
+.slider {
+    position: absolute;
+    top: 0px; /* Adjust the top position according to your navbar height */
+    left: 0;
+    width: 100%;
+    max-height: 695px;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .images {
+    display: flex;
+    overflow-x: hidden; /* Allow horizontal scrolling if images overflow */
+    scroll-snap-type: x mandatory;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
+  .images img {
+    flex: 0 0 100%; /* Ensure each image takes full width of the slider */
+    scroll-snap-align: start; /* Snap each image to the start of the slider */
+  }
+
+  .navigationdots {
+    position: absolute;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.navigationdots a {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: all ease 250ms;
+}
+
+
+.navigationdots a:hover {
+  outline: 2px solid yellow;
+  transition: all ease 250ms;
+}
+
+.navigationdots a.active {
+  background-color: yellow;
+  transition: all ease 250ms;
+  box-shadow: 0 0 5px yellow;
+}

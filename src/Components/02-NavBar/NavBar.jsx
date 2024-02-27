@@ -14,6 +14,7 @@ function NavBar() {
     
     
       <div className={styles.container2}>
+        <img className={styles.logo} src="./images/logo.png" alt="Logo" />
         <nav>
           <a href='#'>Home</a>
           <a href='#'>About</a>
