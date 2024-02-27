@@ -35,6 +35,7 @@ html {
     position: absolute;
     bottom: 10px; /* Adjust the distance from the bottom */
     left: 50%; /* Center horizontally */
+    max-height: 695px;
     transform: translateX(-50%); /* Center horizontally */
     display: flex;
     justify-content: center;
