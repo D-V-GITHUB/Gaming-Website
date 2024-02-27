@@ -35,8 +35,6 @@ nav a {
 .dropdown1 {
     display: grid;
     opacity: 1;
-    grid-column-start: -8;
-    grid-row-start: 2;
     justify-content: start;
     align-self: start;
     overflow: hidden;
@@ -83,17 +81,20 @@ nav a:hover{
     transition: all 1s;
 }
 
-nav{
+.container2 nav {
     display: grid;
-    grid-template-columns: auto 40px auto auto auto auto auto auto;
-    grid-template-rows: 40px 100px;
-    grid-column-start: 2;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 30px));
+    grid-auto-rows: auto;
+    justify-items: center;
     align-items: center;
-    column-gap: 30px;
+  }
+  
+  .container2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     row-gap: 0px;
-}
-
+    align-items: center;
+  }
   
 
 
@@ -140,13 +141,12 @@ nav{
     transition: all 1s;
 }
 
-.container2{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    
-}
+
+
 
 .logo{
+    min-width: 50%;
+    max-width: 40%;
     z-index: 3;
     justify-self: center;
 }
@@ -162,6 +162,11 @@ nav{
         width: 100px;
         height: auto;
     }
+}
+
+
+    @media screen and (max-width: 1200px) {
+        
 
   
   

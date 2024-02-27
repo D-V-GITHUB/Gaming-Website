@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import styles from './NavBar.module.css';
 
 function NavBar() {
@@ -18,12 +17,6 @@ function NavBar() {
         <nav>
           <a href='#'>Home</a>
           <a href='#'>About</a>
-          <ul className={styles.dropdown1}>
-              <li><a href='#'>About</a></li>
-              <li><a href='#'>About Alternative</a></li>
-              <li><a href='#'>Team</a></li>
-              <li><a href='#'>Career</a></li>
-            </ul>
           <a href='#'>Games</a>
           <a href='#'>Blog</a>
           <a href='#'>Community</a>
@@ -31,6 +24,13 @@ function NavBar() {
           <a href='#'>Pages</a>
           <a href='#'>Contact</a>
         </nav>
+
+        <ul className={styles.dropdown1}>
+              <li><a href='#'>About</a></li>
+              <li><a href='#'>About Alternative</a></li>
+              <li><a href='#'>Team</a></li>
+              <li><a href='#'>Career</a></li>
+            </ul>
       </div>
     </>
   );
