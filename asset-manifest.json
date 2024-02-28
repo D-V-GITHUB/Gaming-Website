@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Gaming-Website/static/css/main.436e0555.css",
-    "main.js": "/Gaming-Website/static/js/main.f49faf14.js",
+    "main.css": "/Gaming-Website/static/css/main.be8d0f33.css",
+    "main.js": "/Gaming-Website/static/js/main.c08624c5.js",
     "index.html": "/Gaming-Website/index.html",
-    "main.436e0555.css.map": "/Gaming-Website/static/css/main.436e0555.css.map",
-    "main.f49faf14.js.map": "/Gaming-Website/static/js/main.f49faf14.js.map"
+    "main.be8d0f33.css.map": "/Gaming-Website/static/css/main.be8d0f33.css.map",
+    "main.c08624c5.js.map": "/Gaming-Website/static/js/main.c08624c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.436e0555.css",
-    "static/js/main.f49faf14.js"
+    "static/css/main.be8d0f33.css",
+    "static/js/main.c08624c5.js"
   ]
 }
