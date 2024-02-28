@@ -14,43 +14,65 @@ ul{
 nav {
     position: relative;
     z-index: 2; 
+    backdrop-filter: blur(10px);
+    background-color: rgba(31, 31, 31, 0.5); /* Adjust the background color and opacity as needed */
+    border-radius: 20px 0 0 20px;
+    margin-right: -20px;
+    height: 50px;
 }
 
 nav a {
     position: relative; 
-    z-index: 2; 
+    z-index: 3; 
 }
 
-.dropdown1:hover{
-    opacity: 1;
-    visibility: visible;
-    max-width: 150px;
-    width: 200px;
-    max-height: 80px;
-    transition: max-height 1s;
-    transition: all 1s;
-}
+
 
 
 .dropdown1 {
+    position: absolute;
     display: grid;
-    opacity: 1;
     justify-content: start;
     align-self: start;
     overflow: hidden;
-    transform-origin: top;
     border-radius: 8px;
     max-height: 0;
     max-width: 0;
-    width: 200px;
     white-space: nowrap;
-    height: 200px;
     transition: max-width 1s, max-height 1s, opacity 8s, visibility 0s 1s;
     background-color: rgb(152, 152, 152);
+    z-index: 4;
+    left: calc(1% + 100px);
+    top: 40px;
+    backdrop-filter: blur(10px);
+    background-color: rgb(31, 31, 31);
 }
 
+nav a:nth-child(2):hover + .dropdown1 {
+    color: yellow;
+    max-width: 150px;
+    max-height: 120px;
+  }
+
+  .dropdown1 li a:hover {
+    color: yellow;
+    max-width: 150px;
+    max-height: 120px;
+  }
+
+  .dropdown1:hover {
+    color: yellow;
+    max-width: 150px;
+    max-height: 120px;
+  }
+
+
+
+
 .dropdown1 li a {
-    color: black;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
   }
 
 
@@ -59,16 +81,7 @@ nav a:focus{
 }
 
 
-nav a:nth-child(2):focus + .dropdown1 {
-    color: yellow;
-    opacity: 1;
-    visibility: visible;
-    max-width: 150px;
-    width: 200px;
-    max-height: 80px;
-    transition: max-height 1s;
-    transition: all 1s;
-  }
+
 
 nav a{
     text-decoration: none;
@@ -90,6 +103,7 @@ nav a:hover{
   }
   
   .container2 {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr;
     row-gap: 0px;
@@ -154,6 +168,9 @@ nav a:hover{
 
 
 
+
+
+
 @media screen and (max-width: 500px) {
     .container2 nav {
         display: none;
@@ -165,12 +182,18 @@ nav a:hover{
 }
 
 
-    @media screen and (max-width: 1200px) {
-        
-
+@media screen and (max-width: 1200px) and (min-width: 501px) {
+   .dropdown1{
+    top: 30px;
+   }
+   
+   
+    nav {
+    height: 80px;
+   }
+  }
   
   
-}
 
 @media screen and (min-width: 501px) {
   

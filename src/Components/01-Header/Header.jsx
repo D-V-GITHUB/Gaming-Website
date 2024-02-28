@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import NavBar from '../02-NavBar/NavBar';
 
 function Header() {
-    const [activeDot, setActiveDot] = useState(null);
+    const [activeDot, setActiveDot] = useState('slide1');
 
     const handleDotClick = (dotId) => {
         setActiveDot(dotId);
