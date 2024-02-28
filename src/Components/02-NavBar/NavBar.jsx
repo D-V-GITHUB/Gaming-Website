@@ -1,6 +1,20 @@
 import styles from './NavBar.module.css';
+import React, { useState, useEffect } from 'react';
+
 
 function NavBar() {
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsMobile(userAgent.match(/mobile/i));
+    console.log(isMobile);
+    return () => {
+      setIsMobile(false);
+    };
+  },[]);
+
   
   return (
     <>
@@ -14,7 +28,7 @@ function NavBar() {
     
       <div className={styles.container2}>
         <img className={styles.logo} src="./images/logo.png" alt="Logo" />
-        <nav>
+        <nav className={isMobile ? styles.containerMobile : styles.containerDesktop}>
           <a href='#'>Home</a>
           <a href='#'>About</a>
             <ul className={styles.dropdown1}>
