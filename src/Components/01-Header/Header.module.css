@@ -29,6 +29,8 @@ html {
   .images img {
     flex: 0 0 100%; /* Ensure each image takes full width of the slider */
     scroll-snap-align: start; /* Snap each image to the start of the slider */
+    width: 100%;
+    height: auto;
   }
 
   .navigationdots {
