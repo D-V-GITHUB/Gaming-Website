@@ -1,91 +1,84 @@
-.logo{
-    margin-top: 32px;
-    display: inline-block;
-}
-
-.div2{
-    display: grid;
-    grid-template-columns: 1fr 0.5fr;
-    position: relative;
-    margin-top: 20px;
-    width: 100%;
-    height: 50%;
-    font-size: 7vw;
-    text-align: left;
-}
-
-.hed{
-    margin-left: 50px;
+html {
+  scroll-behavior: smooth;
 }
 
 
-.button1{
-<<<<<<< HEAD
-    margin-left: 74%;
-    margin-top: 30%;
+.images img{
+    width: 400px;
+    height: auto;
+}
+
+.slider {
     position: absolute;
-    width: 20%;
-    height: 18%;
-=======
-    width: 35%;
-    height: 10%;
->>>>>>> 6f97d6b (New Code)
-    background-color: #F9F9F9;
-    border: none;
-    border-radius: 80px;
-    padding: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    white-space: nowrap;
-}
+    top: 0px; /* Adjust the top position according to your navbar height */
+    left: 0;
+    width: 100%;
+    max-height: 695px;
+    z-index: 0;
+    overflow: hidden;
+  }
 
-.div3{
-<<<<<<< HEAD
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    margin: 0 30px;
-}
-
-.p1{
-    grid-column: span 1;
-    justify-self: start;
-}
-
-
-
-
-/* CSS for devices under 500px */
-@media screen and (max-width: 500px) {
-    /* Add your styles for devices under 500px here */
-    .div2{
-        margin-bottom: 50px;
-    }
-
-    .div3{
-        display: block;
-    }
-
-    .button1{
-        margin-left: 60%;
-        margin-top: 50%;
-        width: auto;
-        height: 25%;
-    }
-}
-
-/* CSS for devices above 500px */
-@media screen and (min-width: 501px) {
-    /* Add your styles for devices above 500px here */
-    
-}
-
-
-
-=======
+  .images {
     display: flex;
-    justify-content: space-evenly;
-    white-space: wrap;
-    text-align: center;
-    margin-top: 20px;
+    overflow-x: hidden; /* Allow horizontal scrolling if images overflow */
+    scroll-snap-type: x mandatory;
+    position: relative;
+    scroll-behavior: smooth;
+  }
+
+  .images img {
+    flex: 0 0 100%; /* Ensure each image takes full width of the slider */
+    scroll-snap-align: start; /* Snap each image to the start of the slider */
+    width: 100%;
+    height: auto;
+  }
+
+  .navigationdots {
+    position: absolute;
+    bottom: 10px; /* Adjust the distance from the bottom */
+    left: 50%; /* Center horizontally */
+    max-height: 695px;
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
->>>>>>> 6f97d6b (New Code)
+
+.navigationdots a {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: all ease 250ms;
+}
+
+
+.navigationdots a:hover {
+  outline: 2px solid yellow;
+  transition: all ease 250ms;
+}
+
+.navigationdots a.active {
+  background-color: yellow;
+  transition: all ease 250ms;
+  box-shadow: 0 0 5px yellow;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  
+  .slider{
+    max-height: auto;
+  }
+
+
+}
+
+@media screen and (min-width: 501px) {
+
+
+}

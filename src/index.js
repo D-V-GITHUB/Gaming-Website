@@ -10,8 +10,9 @@ cd
 
 npm run build
 
-npm run deploy
 
+
+npm run deploy
 git add .
 git commit -m "New Update"
 git push

@@ -1,42 +1,55 @@
-import React, { useState } from 'react';
 import styles from './NavBar.module.css';
+import React, { useState, useEffect } from 'react';
+
 
 function NavBar() {
-  const [isHovered, setIsHovered] = useState(false);
-  const [hoveredItem, setHoveredItem] = useState('');
 
-  const handleMouseEnter = (item) => {
-    setIsHovered(true);
-    setHoveredItem(item);
-  };
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    setHoveredItem('');
-  };
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsMobile(userAgent.match(/mobile/i));
+    console.log(isMobile);
+    return () => {
+      setIsMobile(false);
+    };
+  },[]);
 
-  let animationStyle = styles.animation;
-
-  if (isHovered && hoveredItem === 'home') {
-    animationStyle = `${styles.animation} ${styles.hovered1}`;
-  } else if (isHovered && hoveredItem === 'projects') {
-    animationStyle = `${styles.animation} ${styles.hovered2}`;
-  } else if (isHovered && hoveredItem === 'about') {
-    animationStyle = `${styles.animation} ${styles.hovered3}`;
-  } else if (isHovered && hoveredItem === 'contact') {
-    animationStyle = `${styles.animation} ${styles.hovered4}`;
-  }
-
+  
   return (
-    <div className={styles.div1}>
-      <nav>
-        <a href='#' onMouseEnter={() => handleMouseEnter('home')} onMouseLeave={handleMouseLeave}>Home</a>
-        <a href='#' onMouseEnter={() => handleMouseEnter('projects')} onMouseLeave={handleMouseLeave}>Projects</a>
-        <a href='#' onMouseEnter={() => handleMouseEnter('about')} onMouseLeave={handleMouseLeave}>About</a>
-        <a href='#' onMouseEnter={() => handleMouseEnter('contact')} onMouseLeave={handleMouseLeave}>Contact</a>
-        <div className={animationStyle} />
-      </nav>
-    </div>
+    <>
+      <div className={styles.container1}>
+        <i className="fab fa-facebook"></i>
+        <i className="fab fa-twitter"></i>
+        <i className="fab fa-instagram"></i>
+        <i className="fab fa-youtube"></i>
+      </div>
+    
+    
+      <div className={styles.container2}>
+        <img className={styles.logo} src="./images/logo.png" alt="Logo" />
+        <nav className={isMobile ? styles.containerMobile : styles.containerDesktop}>
+          <a href='#'>Home</a>
+          <a href='#'>About</a>
+            <ul className={styles.dropdown1}>
+                <li><a href='#'>About</a></li>
+                <li><a href='#'>About Alternative</a></li>
+                <li><a href='#'>Team</a></li>
+                <li><a href='#'>Career</a></li>
+              </ul>
+          <a href='#'>Games</a>
+          <a href='#'>Blog</a>
+          <a href='#'>Community</a>
+          <a href='#'>esports</a>
+          <a href='#'>Pages</a>
+          <a href='#'>Contact</a>
+        </nav>
+        
+      </div>
+
+      
+     
+    </>
   );
 }
 
